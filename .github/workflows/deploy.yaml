@@ -9,8 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
@@ -18,5 +16,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - uses: w9jds/firebase-action@master
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         with:
           args: deploy --only hosting
