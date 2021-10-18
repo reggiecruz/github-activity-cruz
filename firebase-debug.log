@@ -1,0 +1,46 @@
+[debug] [2021-10-18T05:22:34.322Z] ----------------------------------------------------------------------
+[debug] [2021-10-18T05:22:34.324Z] Command:       C:\Program Files\nodejs\node.exe C:\git\github-actions-demo\node_modules\firebase-tools\lib\bin\firebase.js deploy --token $FIREBASE_TOKEN --only hosting
+[debug] [2021-10-18T05:22:34.324Z] CLI Version:   7.16.2
+[debug] [2021-10-18T05:22:34.324Z] Platform:      win32
+[debug] [2021-10-18T05:22:34.324Z] Node Version:  v12.18.3
+[debug] [2021-10-18T05:22:34.325Z] Time:          Mon Oct 18 2021 13:22:34 GMT+0800 (China Standard Time)
+[debug] [2021-10-18T05:22:34.325Z] ----------------------------------------------------------------------
+[debug] [2021-10-18T05:22:34.325Z] 
+[debug] [2021-10-18T05:22:34.335Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-10-18T05:22:34.335Z] > authorizing via --token option
+[debug] [2021-10-18T05:22:34.336Z] [iam] checking project github-actions-demo-512d5 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-10-18T05:22:34.338Z] > refreshing access token with scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-10-18T05:22:34.338Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-10-18T05:22:34.616Z] <<< HTTP RESPONSE 400
+[debug] [2021-10-18T05:22:34.617Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/github-actions-demo-512d5:testIamPermissions  
+
+[debug] [2021-10-18T05:22:35.575Z] <<< HTTP RESPONSE 401
+[debug] [2021-10-18T05:22:35.575Z] <<< HTTP RESPONSE BODY
+[debug] [2021-10-18T05:22:35.576Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2021-10-18T05:22:35.577Z] > refreshing access token with scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-10-18T05:22:35.577Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-10-18T05:22:35.746Z] <<< HTTP RESPONSE 400
+[debug] [2021-10-18T05:22:35.746Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/github-actions-demo-512d5  
+ 
+[debug] [2021-10-18T05:22:35.976Z] <<< HTTP RESPONSE 401
+[debug] [2021-10-18T05:22:35.976Z] <<< HTTP RESPONSE BODY
+[debug] [2021-10-18T05:22:35.976Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2021-10-18T05:22:36.120Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at module.exports (C:\git\github-actions-demo\node_modules\firebase-tools\lib\responseToError.js:38:12)
+    at Request._callback (C:\git\github-actions-demo\node_modules\firebase-tools\lib\api.js:40:35)
+    at Request.self.callback (C:\git\github-actions-demo\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:483:12)
+    at Request.<anonymous> (C:\git\github-actions-demo\node_modules\request\request.js:1154:10)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:483:12)
+    at IncomingMessage.<anonymous> (C:\git\github-actions-demo\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (events.js:421:28)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:483:12)
+    at endReadableNT (_stream_readable.js:1220:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+[error] 
+[error] Error: Failed to get Firebase project github-actions-demo-512d5. Please make sure the project exists and your account has permission to access it.
